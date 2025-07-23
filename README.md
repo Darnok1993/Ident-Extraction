@@ -2,7 +2,7 @@
 
 #### Video Demo: [Insert YouTube URL here]  
 #### Author: Konrad Wranik  
-#### GitHub: [your GitHub username]  
+#### GitHub: Darnok1993  
 #### Location: Fürth, Germany  
 #### Date: July 2025
 
