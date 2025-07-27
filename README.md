@@ -1,6 +1,6 @@
 # Ident Extraction App
 
-#### Video Demo: [Insert YouTube URL here]  
+#### Video Demo: https://www.youtube.com/watch?v=BiEitp3IfJ8
 #### Author: Konrad Wranik  
 #### GitHub: Darnok1993  
 #### Location: Fürth, Germany  
@@ -73,7 +73,7 @@ Each component is parsed as:
 Regex pattern used:
 
 ```python
-(?P<DocNumber>[a-zA-Z0-9-_]+)\n?-(?P<DocType>[a-zA-Z0-9]{3})\n?-(?P<DocPart>[a-zA-Z0-9]{3})\n?-?(?P<DocVersion>\d{1,2})?
+(?P<DocNumber>[a-zA-Z0-9-_]+)\n?-(?P<DocType>[a-zA-Z0-9]{3})\n?-(?P<DocPart>[a-zA-Z0-9]{3})\n?-?(?P<DocVersion>\d{1,2})
 
 ---
 
