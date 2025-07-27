@@ -10,11 +10,19 @@
 
 ## 📌 Overview
 
-The **Ident Extraction App** is a web-based tool that allows users to extract structured **identifiers (Idents)** from technical documents in PDF, Word (`.docx`), or Excel (`.xlsx`) formats. These identifiers typically follow a standardized pattern used in manufacturing or documentation systems.
+The Ident Extraction App is a web-based tool that enables users to extract structured identifiers (Idents) from technical documents in PDF, Word (.docx), or Excel (.xlsx) formats. These identifiers typically follow a standardized pattern commonly used in manufacturing and documentation systems.
 
-The extracted data is automatically cleaned, deduplicated, and exported as an Excel file — ready for analysis. The tool was developed using **Flask (Python)** for the backend and **Bootstrap** for the frontend interface.
+Extracted data is automatically cleaned, deduplicated, and exported as an Excel file — ready for further analysis. The tool was built with Flask (Python) powering the backend and Bootstrap providing a responsive and user-friendly frontend interface.
 
-This project is based on a **real-world use case** and solves a recurring problem in industrial environments at my company, where manual inspection of test reports and documents is inefficient and error-prone.
+This project addresses a real-world challenge encountered in industrial settings at my company, where manual inspection and comparison of test reports and technical documents is inefficient, error-prone, and hard to scale.
+
+Within our validation department, we often perform revalidations that depend heavily on historical validations. This involves thoroughly reviewing legacy documents to understand their contents and identify which documents are referenced. A key part of this process is determining whether existing documents can be reused as-is in the new validation workflow or whether they must be replaced by equivalent documents from related sectors.
+
+By systematically analyzing past documentation, we uncover what was previously included, what remains relevant today, and what new information must be incorporated. This comparison facilitates the creation of updated, accurate validation documentation aligned with current standards and requirements.
+
+Manual review of these documents is time-consuming and susceptible to human error. Automating the extraction of structured identifiers from technical files not only streamlines the process but also reduces mistakes and greatly accelerates the preparation of new validation materials.
+
+The Ident Extraction App integrates seamlessly into this workflow, offering a reliable and automated solution to collect and analyze document identifiers across multiple file types, thereby enhancing quality assurance, traceability, and overall document management efficiency in our industrial environment.
 
 ---
 
@@ -75,6 +83,19 @@ Regex pattern used:
 ```python
 (?P<DocNumber>[a-zA-Z0-9-_]+)\n?-(?P<DocType>[a-zA-Z0-9]{3})\n?-(?P<DocPart>[a-zA-Z0-9]{3})\n?-?(?P<DocVersion>\d{1,2})
 ```
+
+The pattern matches document identifiers with the following components:
+
+DocNumber: The first part of the identifier, which consists of one or more alphanumeric characters, dashes (-), or underscores (_). This segment typically represents the main document and can include letters (both uppercase and lowercase), numbers, and some special characters.
+Example: ABCD_123, X-45, test_01
+
+DocType: Exactly three alphanumeric characters following a dash. This usually denotes the type or category of the document or component. The strict length of three characters helps ensure uniformity.
+Example: XYZ, ABC, 123, AB1
+
+DocPart: Exactly three alphanumeric characters following a dash. This represents a subclassification or specific type within the broader DocType category. It helps to further specify the part or section within the document or product series.
+
+DocVersion: An optional one- or two-digit numeric version number. This indicates the version or revision of the document or part.
+Examples: 1, 12, or omitted if no version is specified.
 
 ---
 
