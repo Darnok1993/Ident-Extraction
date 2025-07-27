@@ -74,6 +74,7 @@ Regex pattern used:
 
 ```python
 (?P<DocNumber>[a-zA-Z0-9-_]+)\n?-(?P<DocType>[a-zA-Z0-9]{3})\n?-(?P<DocPart>[a-zA-Z0-9]{3})\n?-?(?P<DocVersion>\d{1,2})
+```
 
 ---
 
