@@ -55,7 +55,7 @@ The Ident Extraction App integrates seamlessly into this workflow, offering a re
 
 ## 🗂 Project Structure
 
-ident-extraction/
+Ident-Extraction/
 ├── app.py # Main Flask application
 ├── uploads/ # Temporary folder for uploaded and processed files
 ├── templates/
